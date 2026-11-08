@@ -1,0 +1,27 @@
+<section class="section section--alt" id="experience">
+  <div class="container">
+    <p class="section-label">04 — Experience</p>
+    <h2 class="section-title">Where I've been</h2>
+    <p class="section-subtitle">
+      Work experience and education. Update the entries in
+      <code>portfolio.data.ts</code> with your own.
+    </p>
+
+    <ol class="timeline">
+      @for (item of portfolio.experience; track item.role + item.period) {
+        <li class="timeline__item" [class.timeline__item--education]="item.kind === 'education'">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <div class="timeline__meta">
+              <span class="timeline__period">{{ item.period }}</span>
+              <span class="timeline__kind">{{ item.kind === 'work' ? 'Work' : 'Education' }}</span>
+            </div>
+            <h3 class="timeline__role">{{ item.role }}</h3>
+            <p class="timeline__company">{{ item.company }}</p>
+            <p class="timeline__desc">{{ item.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

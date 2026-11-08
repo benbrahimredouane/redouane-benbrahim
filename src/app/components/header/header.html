@@ -1,0 +1,31 @@
+<header class="site-header" [class.site-header--scrolled]="scrolled()">
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href="#top" (click)="closeMenu()">
+      <span class="site-header__logo-mark">R.</span>
+      <span class="site-header__logo-name">{{ portfolio.name }}</span>
+    </a>
+
+    <nav class="site-nav" [class.site-nav--open]="menuOpen()" aria-label="Main navigation">
+      @for (link of links; track link.href) {
+        <a class="site-nav__link" [href]="link.href" (click)="closeMenu()">
+          {{ link.label }}
+        </a>
+      }
+      <a class="btn btn--primary site-nav__cta" [href]="'#contact'" (click)="closeMenu()">
+        Let's talk
+      </a>
+    </nav>
+
+    <button
+      class="site-header__toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle navigation"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

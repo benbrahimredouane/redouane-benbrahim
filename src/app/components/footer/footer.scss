@@ -1,0 +1,23 @@
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: 1.75rem;
+  background: var(--color-bg-alt);
+}
+
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-footer__copy {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.site-footer__top {
+  font-size: 0.875rem;
+  font-weight: 500;
+}

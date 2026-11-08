@@ -1,0 +1,36 @@
+<section class="section section--alt" id="skills">
+  <div class="container">
+    <p class="section-label">02 — Skills</p>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-subtitle">
+      Technologies I use regularly, grouped by area. Levels reflect hands-on
+      project experience.
+    </p>
+
+    <div class="skills__grid">
+      @for (group of portfolio.skills; track group.title) {
+        <div class="skill-card">
+          <h3 class="skill-card__title">{{ group.title }}</h3>
+          <ul class="skill-card__list">
+            @for (item of group.items; track item.name) {
+              <li class="skill-item">
+                <span class="skill-item__name">{{ item.name }}</span>
+                <span class="skill-item__level">
+                  <span class="skill-item__dots" aria-hidden="true">
+                    @for (dot of [1, 2, 3]; track dot) {
+                      <span
+                        class="skill-item__dot"
+                        [class.skill-item__dot--filled]="dot <= levelDots(item.level)"
+                      ></span>
+                    }
+                  </span>
+                  <span class="skill-item__label">{{ item.level }}</span>
+                </span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

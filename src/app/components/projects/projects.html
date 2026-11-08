@@ -1,0 +1,42 @@
+<section class="section" id="projects">
+  <div class="container">
+    <p class="section-label">03 — Projects</p>
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-subtitle">
+      A few projects I've built while learning and working. Replace the
+      placeholders in <code>portfolio.data.ts</code> with your own.
+    </p>
+
+    <div class="projects__grid">
+      @for (project of portfolio.projects; track project.title) {
+        <article class="project-card">
+          <div class="project-card__thumb" [attr.data-tag]="project.tag">
+            <span class="project-card__tag">{{ project.tag }}</span>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">{{ project.title }}</h3>
+            <p class="project-card__desc">{{ project.description }}</p>
+            <ul class="project-card__tech" aria-label="Technologies">
+              @for (tech of project.tech; track tech) {
+                <li class="tag">{{ tech }}</li>
+              }
+            </ul>
+            @if (project.link) {
+              <a
+                class="project-card__link"
+                [href]="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View project
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M9 7h8v8" />
+                </svg>
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

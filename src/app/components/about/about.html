@@ -1,0 +1,30 @@
+<section class="section" id="about">
+  <div class="container about__inner">
+    <div class="about__text">
+      <p class="section-label">01 — About</p>
+      <h2 class="section-title">A bit about me</h2>
+      @for (paragraph of portfolio.bio; track $index) {
+        <p class="about__paragraph">{{ paragraph }}</p>
+      }
+    </div>
+
+    <dl class="about__facts">
+      <div class="about__fact">
+        <dt>Location</dt>
+        <dd>{{ portfolio.location }}</dd>
+      </div>
+      <div class="about__fact">
+        <dt>Focus</dt>
+        <dd>Angular · TypeScript · Full-Stack Web</dd>
+      </div>
+      <div class="about__fact">
+        <dt>Availability</dt>
+        <dd>Open to junior roles &amp; internships</dd>
+      </div>
+      <div class="about__fact">
+        <dt>Email</dt>
+        <dd><a [href]="'mailto:' + portfolio.email">{{ portfolio.email }}</a></dd>
+      </div>
+    </dl>
+  </div>
+</section>

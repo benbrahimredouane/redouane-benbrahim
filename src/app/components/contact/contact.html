@@ -1,0 +1,68 @@
+<section class="section" id="contact">
+  <div class="container contact__inner">
+    <div class="contact__info">
+      <p class="section-label">05 — Contact</p>
+      <h2 class="section-title">Let's work together</h2>
+      <p class="contact__text">
+        I'm currently looking for junior full-stack opportunities, internships
+        or freelance projects. Feel free to reach out — my inbox is always open.
+      </p>
+
+      <a class="contact__email" [href]="'mailto:' + portfolio.email">
+        {{ portfolio.email }}
+      </a>
+
+      <ul class="contact__socials">
+        @for (social of portfolio.socials; track social.label) {
+          <li>
+            <a [href]="social.url" target="_blank" rel="noopener noreferrer">
+              {{ social.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <form class="contact__form" (submit)="$event.preventDefault()">
+      <div class="contact__field">
+        <label for="contact-name">Name</label>
+        <input
+          id="contact-name"
+          type="text"
+          placeholder="Your name"
+          [value]="name()"
+          (input)="name.set($any($event.target).value)"
+          required
+        />
+      </div>
+      <div class="contact__field">
+        <label for="contact-email">Email</label>
+        <input
+          id="contact-email"
+          type="email"
+          placeholder="you@example.com"
+          [value]="email()"
+          (input)="email.set($any($event.target).value)"
+          required
+        />
+      </div>
+      <div class="contact__field">
+        <label for="contact-message">Message</label>
+        <textarea
+          id="contact-message"
+          rows="5"
+          placeholder="Tell me about your project or opportunity…"
+          [value]="message()"
+          (input)="message.set($any($event.target).value)"
+          required
+        ></textarea>
+      </div>
+      <a class="btn btn--primary contact__submit" [href]="mailtoHref()">
+        Send message
+      </a>
+      <p class="contact__note">
+        This opens your email client — no backend required.
+      </p>
+    </form>
+  </div>
+</section>

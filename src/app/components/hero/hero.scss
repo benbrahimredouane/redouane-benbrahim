@@ -1,0 +1,124 @@
+.hero {
+  padding-block: clamp(4rem, 10vw, 7rem);
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(124, 58, 237, 0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(79, 70, 229, 0.05), transparent);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero__greeting {
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero__name {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(120deg, var(--color-text) 30%, var(--color-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__role {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-top: 0.25rem;
+}
+
+.hero__tagline {
+  margin-top: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 48ch;
+  font-size: 1.05rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hero__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+// ── Code card visual ─────────────────────────────────────────
+.code-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 12px 40px rgba(26, 27, 46, 0.08);
+  overflow: hidden;
+  transform: rotate(1.5deg);
+}
+
+.code-card__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 1rem;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.code-card__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.code-card__dot:nth-child(1) { background: #f87171; }
+.code-card__dot:nth-child(2) { background: #fbbf24; }
+.code-card__dot:nth-child(3) { background: #34d399; }
+
+.code-card__file {
+  margin-left: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.code-card__body {
+  margin: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  overflow-x: auto;
+}
+
+.c-kw { color: var(--color-secondary); font-weight: 600; }
+.c-str { color: var(--color-primary); }
+.c-fn { color: #0891b2; }
+.c-cls { color: #b45309; }
+.c-cm { color: #9ca3af; font-style: italic; }
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero__visual {
+    max-width: 480px;
+  }
+}
